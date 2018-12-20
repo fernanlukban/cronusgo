@@ -6,6 +6,7 @@ import (
 
 type Event struct {
 	eventDetails EventDetails
+	eventTypes   map[int]EventTyper
 	owner        int
 }
 
@@ -15,7 +16,6 @@ type EventDetails struct {
 	Title       string
 	Description string
 	Location    string
-	EventTypes  map[int]EventTyper
 }
 
 type Eventer interface {
@@ -68,5 +68,5 @@ func (e Event) Location() string {
 }
 
 func (e Event) EventTypes() map[int]EventTyper {
-	return e.eventDetails.EventTypes
+	return e.eventTypes
 }
