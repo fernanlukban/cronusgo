@@ -1,11 +1,12 @@
 package person
 
 import (
-    "group"
+    "github.com/fernanlukban/cronus/group"
+    "github.com/fernanlukban/cronus/common"
 )
 
 type Person struct {
-    Id int
+    common.Ider
     Username string
     FirstName string
     LastName string

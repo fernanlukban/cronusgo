@@ -1,14 +1,17 @@
 package event
 
+import (
+    "github.com/fernanlukban/cronus/common"
+)
+
 type EventType struct {
     id int
     name string
 }
 
 type EventTyper interface {
+    common.IderAndNamer
     IsEventType(a_et EventTyper) bool
-    Id() int
-    Name() string
 }
 
 func (et EventType) IsEventType(a_et EventTyper) bool {

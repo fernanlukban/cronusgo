@@ -1,13 +1,16 @@
 package group
 
+import (
+    "github.com/fernanlukban/cronus/common"
+)
+
 type Group struct {
 	id int
     name string
 }
 
 type Grouper interface {
-    Id() int
-    Name() string
+    common.IderAndNamer
 }
 
 func (g Group) Id() int {
