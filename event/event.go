@@ -5,12 +5,17 @@ import (
 )
 
 type Event struct {
-	startTime   time.Time
-	endTime     time.Time
-	title       string
-	description string
-	location    string
-	eventTypes  map[int]EventTyper
+	eventDetails EventDetails
+	owner        int
+}
+
+type EventDetails struct {
+	StartTime   time.Time
+	EndTime     time.Time
+	Title       string
+	Description string
+	Location    string
+	EventTypes  map[int]EventTyper
 }
 
 type Eventer interface {
@@ -43,25 +48,25 @@ func (e Event) IsEventType(a_et EventTyper) bool {
 }
 
 func (e Event) StartTime() time.Time {
-	return e.startTime
+	return e.eventDetails.StartTime
 }
 
 func (e Event) EndTime() time.Time {
-	return e.endTime
+	return e.eventDetails.EndTime
 }
 
 func (e Event) Title() string {
-	return e.title
+	return e.eventDetails.Title
 }
 
 func (e Event) Description() string {
-	return e.description
+	return e.eventDetails.Description
 }
 
 func (e Event) Location() string {
-	return e.location
+	return e.eventDetails.Location
 }
 
 func (e Event) EventTypes() map[int]EventTyper {
-	return e.eventTypes
+	return e.eventDetails.EventTypes
 }
