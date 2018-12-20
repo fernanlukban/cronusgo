@@ -30,7 +30,8 @@ type Eventer interface {
 }
 
 func (e Event) TotalDuration() time.Time {
-	var time_difference time.Duration = e.EndTime().Sub(e.StartTime())
+    endTime := e.EndTime()
+	var time_difference time.Duration = endTime.Sub(e.StartTime())
 
 	// Translates time_difference into a time.Time object
 	total_duration := time.Time{}.Add(time_difference)
