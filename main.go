@@ -1,14 +1,14 @@
 package main
 
 import (
-    "fmt"
-    "github.com/fernanlukban/cronus/event"
+	"fmt"
+	"github.com/fernanlukban/cronus/event"
 )
 
 func main() {
-    fmt.Println("Hello, world!")
+	fmt.Println("Hello, world!")
 
-    event1 := event.Event{}
+	event1 := event.Event{}
 
-    fmt.Println(event1.Title())
+	fmt.Println(event1.Title())
 }

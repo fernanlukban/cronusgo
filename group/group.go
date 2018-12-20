@@ -1,22 +1,22 @@
 package group
 
 import (
-    "github.com/fernanlukban/cronus/common"
+	"github.com/fernanlukban/cronus/common"
 )
 
 type Group struct {
-	id int
-    name string
+	id   int
+	name string
 }
 
 type Grouper interface {
-    common.IderAndNamer
+	common.IderAndNamer
 }
 
 func (g Group) Id() int {
-    return g.id
+	return g.id
 }
 
 func (g Group) Name() string {
-    return g.name
+	return g.name
 }

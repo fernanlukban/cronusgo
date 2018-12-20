@@ -1,14 +1,14 @@
 package common
 
 type Ider interface {
-    Id() int
+	Id() int
 }
 
 type Namer interface {
-    Name() string
+	Name() string
 }
 
 type IderAndNamer interface {
-    Ider
-    Namer
+	Ider
+	Namer
 }
